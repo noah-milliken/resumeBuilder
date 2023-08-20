@@ -5,7 +5,7 @@ const InfoForm = () => {
   const [info, setInfo] = useState({firstName: 'Seth', lastName: 'Milliken', phone:'207-664-8936', email: 'noahmilliken@gmail.com'});
   const [schoolFormData, setSchoolFormData] = useState([{schoolName: 'Temple ', degree: 'Geography', finishDate: '12-12-2013', description: 'Honors in area of study focus on GIS'}]);
 
-  const [professionalFormData, setProfessionalFormData] = useState([{companyName: '', position: '', dateStarted: '', dateFinished: '', description: ''}])
+  const [professionalFormData, setProfessionalFormData] = useState([{companyName: 'Css Bakeries LLC', position: 'Baker', dateStarted: '12-12-2-2022', dateFinished: '12-12-2-2022', description: 'Cooked up some sweet sweet CSS'}])
 
   const handleSchoolFormChange = (index, event) => {
     console.log(event)
@@ -138,6 +138,19 @@ const InfoForm = () => {
             <h4>{data.finishDate}</h4>
             <h4>{data.description}</h4>
             </div>
+          ))}
+        </div>
+        <div>
+        {/* {companyName: '', position: '', dateStarted: '', dateFinished: '', description: ''} */}
+          {professionalFormData.map((job, index) => (
+            <div key={index}>
+              <h4>{job.companyName}</h4>
+              <h4>{job.position}</h4>
+              <h4>{job.dateStarted}</h4>
+              <h4>{job.dateFinished}</h4>
+              <h4>{job.description}</h4>
+            </div>
+            
           ))}
         </div>
       </div>
